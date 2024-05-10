@@ -1,0 +1,26 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// export async function GetUserBalance(playerId) {\r\n\r\n    try {\r\n        const url = `http://getuserwallet.gamesapp.in/`;\r\n\r\n        const options = {\r\n            method : \"POST\",\r\n            headers : {\r\n                \"Content-Type\" : \"application/json\",\r\n            },\r\n            body : JSON.stringify({\r\n                playerId : 226310+\"\",\r\n            })\r\n        }\r\n\r\n        const response = await fetch(url, options);\r\n\r\n        const data = await response.json();\r\n\r\n\r\n        if(!response.ok && response.status !== 200) {\r\n            console.log( {\r\n                success : false,\r\n                data : data\r\n            });\r\n        } else {\r\n\r\n\r\n\r\n            let amount = data.depositBal + data.withdrawalBal + data.bonusBal;\r\n\r\n            if(amount <= 0) {\r\n                console.log( {\r\n                    success : false,\r\n                    data : \"Insufficient balance\"\r\n                });\r\n            } else {\r\n                console.log({\r\n                    success : true,\r\n                    data : amount\r\n                });\r\n            }\r\n            \r\n        }\r\n    } catch (error) {\r\n\r\n        console.log(error)\r\n\r\n         console.log({\r\n            success : false,\r\n            data: \"Error in getting user balance\"\r\n        });\r\n    }\r\n\r\n\r\n// }"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "ReferenceError: fetch is not defined",
+                                "    at <Cell 1> [16, 14]",
+                                "    at <Cell 1> [45, 46]{ success: false, data: 'Error in getting user balance' }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

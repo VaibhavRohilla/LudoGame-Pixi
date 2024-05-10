@@ -1,0 +1,61 @@
+
+@PlayerID=226301
+@Amount=10
+
+### UAT Player Wallet API
+POST https://getplayerwallet.gamesapp.in/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "playerId" : {{PlayerID}}
+}
+
+
+### User Wallet
+POST http://getuserwallet.gamesapp.in/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "playerId": "226324"
+}
+
+### GET Servers
+
+POST http://64.227.154.60:9091/api/gameServers HTTP/1.1
+Content-Type: application/json
+
+{
+    "playerId": "100051",
+    "entryFee": 10,
+            "tableTypeId": 2,
+            "name": "name"
+}
+
+
+### UAT Cash Balance API
+
+POST https://tocashbalance.gamesapp.co/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "playerId" : {{PlayerID}},
+    "from" : {
+        "src" : "testAPI"
+    }
+}
+
+
+### UAT Game Balance API
+
+POST https://togamebalance.gamesapp.co/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "playerId" : {{PlayerID}},
+    "amount" : {{Amount}}
+}
+
+
+
+
+
